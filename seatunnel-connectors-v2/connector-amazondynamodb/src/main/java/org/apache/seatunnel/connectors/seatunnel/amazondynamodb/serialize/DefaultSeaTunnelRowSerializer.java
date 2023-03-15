@@ -152,7 +152,7 @@ public class DefaultSeaTunnelRowSerializer implements SeaTunnelRowSerializer {
             case M:
                 MapType<?, ?> mapType = (MapType<?, ?>) seaTunnelDataType;
                 Map<String, Object> map = (Map) value;
-                Map<String, AttributeValue> resultMap = new HashMap<>(map.size());
+                Map<String, AttributeValue> resultMap = new newHashMapWithExpectedSize<>(map.size());
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
                     String mapKeyName = entry.getKey();
                     resultMap.put(
