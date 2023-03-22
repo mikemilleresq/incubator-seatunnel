@@ -157,6 +157,7 @@ public class DefaultSeaTunnelRowDeserializer implements SeaTunnelRowDeserializer
             ArrayType<?, ?> arrayType = (ArrayType<?, ?>) fieldType;
             BasicType<?> elementType = arrayType.getElementType();
             List<String> stringList = JsonUtils.toList(fieldValue, String.class);
+            //This is not released correctly. Please Review.
             Object arr = Array.newInstance(elementType.getTypeClass(), stringList.size());
             for (int i = 0; i < stringList.size(); i++) {
                 Object convertValue = convertValue(elementType, stringList.get(i));
